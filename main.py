@@ -3,6 +3,7 @@ from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
+from sqlalchemy import desc
 
 
 class Base(DeclarativeBase):
@@ -41,3 +42,11 @@ with Session(engine) as session:
 
 session.add_all([student1, student2, student3, student4, student5, student6, student7, student8, student9, student10, student11, student12])
 session.commit()
+
+# Удалить студентов у которых рейтинг рейтинг меньше заданного значения (любое число)
+delete = session.query(Python23).filter(Python23.id > 10).limit(5).all()
+print(delete)
+for i in delete:
+    session.delete(i)
+    session.commit()
+
