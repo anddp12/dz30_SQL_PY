@@ -54,3 +54,7 @@ for i in delete:
 student2.stepcoin = 533
 print(student2)
 session.commit()
+
+# Вывести всех студентов у которых рейтинг больше чем у вас.
+students = session.query(Python23).filter(Python23.id < 2).limit(5).all()
+print(students)
