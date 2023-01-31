@@ -50,3 +50,7 @@ for i in delete:
     session.delete(i)
     session.commit()
 
+# Увеличить в своей записи рейтинг на 5 ед.
+student2.stepcoin = 533
+print(student2)
+session.commit()
